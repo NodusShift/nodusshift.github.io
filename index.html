@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nodus Shift — Redefinim conexiunile. Studio independent de dezvoltare software și aplicații mobile inteligente.">
     <title>Nodus Shift — Software & AI Studio</title>
+    <link rel="icon" type="image/png" href="nodus-logo.png">
     <style>
         :root {
             --bg-primary: #0f1115;
@@ -73,12 +74,11 @@
             letter-spacing: -0.02em;
         }
 
-        .brand-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-primary), #ec4899);
-            display: inline-block;
+        .brand-logo {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            object-fit: cover;
         }
 
         .nav-links {
@@ -167,15 +167,24 @@
         }
 
         .app-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             font-size: 1.5rem;
-            background: linear-gradient(135deg, #4c0519, var(--wine-accent));
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .app-icon.vaultis {
@@ -366,7 +375,9 @@
                 <article class="card">
                     <div>
                         <div class="card-header">
-                            <div class="app-icon" aria-hidden="true">🍷</div>
+                            <div class="app-icon">
+    <img src="cellarkeep-icon.png" alt="CellarKeep">
+</div>
                             <span class="status-tag upcoming">In Dezvoltare</span>
                         </div>
                         <h3>CellarKeep</h3>
@@ -389,7 +400,9 @@
                 <article class="card">
                     <div>
                         <div class="card-header">
-                            <div class="app-icon vaultis" aria-hidden="true">📊</div>
+                            <div class="app-icon">
+    <img src="vaultis-icon.png" alt="Vaultis">
+</div>
                             <span class="status-tag upcoming">În Dezvoltare</span>
                         </div>
                         <h3>Vaultis</h3>
