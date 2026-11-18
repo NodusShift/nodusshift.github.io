@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nodus Shift — Redefinim conexiunile. Studio independent de dezvoltare software și aplicații mobile inteligente.">
+    <title>Nodus Shift — Software & AI Studio</title>
+    <style>
+        :root {
+            --bg-primary: #0f1115;
+            --bg-secondary: #171a21;
+            --bg-card: #1e222b;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-primary: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --wine-accent: #9f1239;
+            --border-color: #2d333f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(15, 17, 21, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), #ec4899);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 88px 0 64px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background-color: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #c4b5fd;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto 36px;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        /* Products Section */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            letter-spacing: -0.02em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 72px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #4b5563;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #4c0519, var(--wine-accent));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-icon.vaultis {
+            background: linear-gradient(135deg, #064e3b, #059669);
+        }
+
+        .status-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+        }
+
+        .status-tag.upcoming {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+            font-size: 0.9rem;
+            color: #d1d5db;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        .btn-link {
+            padding: 8px 14px;
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .btn-link:hover {
+            border-color: var(--accent-primary);
+            color: #c4b5fd;
+        }
+
+        /* Contact Box */
+        .contact-section {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-primary);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .email-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 56px 0 40px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                <span class="brand-dot"></span>
+                Nodus Shift
+            </a>
+            <nav class="nav-links">
+                <a href="#aplicatii">Aplicații</a>
+                <a href="#legal">Documente Legale</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <span class="badge">Nodus Shift — Redefinim conexiunile</span>
+            <h1>Aplicații mobile inteligente, construite pentru claritate.</h1>
+            <p>
+                Dezvoltăm un ecosistem de produse software de nișă alimentate de inteligență artificială, proiectate să simplifice gestionarea colecțiilor personale și a deciziilor de zi cu zi.
+            </p>
+        </section>
+
+        <!-- Products -->
+        <section id="aplicatii">
+            <h2 class="section-title">Portofoliu Aplicații</h2>
+            <div class="products-grid">
+                
+                <!-- CellarKeep Card -->
+                <article class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="app-icon" aria-hidden="true">🍷</div>
+                            <span class="status-tag">Disponibil în Testing</span>
+                        </div>
+                        <h3>CellarKeep</h3>
+                        <p>
+                            Asistentul tău digital pentru managementul cramei personale și al rastelelor de vinuri, asistat de somelierul AI Vesper.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Scanare rapidă a etichetelor și inventariere pe rastele</li>
+                            <li>Monitorizarea ferestrelor optime de consum</li>
+                            <li>Recomandări personalizate de food pairing cu Vesper AI</li>
+                        </ul>
+                    </div>
+                    <div class="card-links" id="legal">
+                        <a href="cellarkeep-privacy.html" class="btn-link">Privacy Policy</a>
+                        <a href="cellarkeep-terms.html" class="btn-link">Terms &amp; Conditions</a>
+                    </div>
+                </article>
+
+                <!-- Vaultis Card (Ecosystem Preview) -->
+                <article class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="app-icon vaultis" aria-hidden="true">📊</div>
+                            <span class="status-tag upcoming">În Dezvoltare</span>
+                        </div>
+                        <h3>Vaultis</h3>
+                        <p>
+                            Aplicație inteligentă de planificare a bugetului personal și urmărire a obiectivelor financiare, interconectată în ecosistemul Nodus Shift.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Urmărire fără fricțiune a cheltuielilor variabile</li>
+                            <li>Analiză predictivă prin asistentul Aegis AI</li>
+                            <li>Sincronizare contextuală cu aplicațiile din suită</li>
+                        </ul>
+                    </div>
+                    <div class="card-links">
+                        <span style="color: var(--text-secondary); font-size: 0.85rem;">Lansare programată în curând</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+            <h2>Suport &amp; Contact</h2>
+            <p>
+                Ai întrebări legate de aplicațiile noastre, dorești să raportezi o problemă sau să soliciți ștergerea datelor contului? Scrie-ne direct.
+            </p>
+            <a href="mailto:nodus.shift@gmail.com" class="email-btn">
+                ✉️ nodus.shift@gmail.com
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                &copy; 2026 <strong>Nodus Shift</strong>. Toate drepturile rezervate.
+            </div>
+            <div class="footer-links">
+                <a href="cellarkeep-privacy.html">CellarKeep Privacy</a>
+                <a href="cellarkeep-terms.html">CellarKeep Terms</a>
+                <a href="mailto:nodus.shift@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
