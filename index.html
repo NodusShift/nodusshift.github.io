@@ -614,10 +614,11 @@
                             Asistentul tău digital pentru managementul cramei personale și al rastelelor de vinuri, asistat de somelierul AI Vesper.
                         </p>
                         <ul class="feature-list">
-                            <li>Scanare OCR a etichetelor și inventariere vizuală pe rastele</li>
-                            <li>Monitorizarea ferestrelor optime de maturare și consum pe baza temperaturii ambientale</li>
-                            <li>Recomandări personalizate de food pairing cu Vesper AI</li>
-                        </ul>
+    <li>Scanare OCR a etichetelor și inventariere vizuală pe rastele</li>
+    <li>Monitorizarea ferestrelor optime de maturare și consum</li>
+    <li>Istoric de consum și profil gustativ personal evolutiv</li>
+    <li>Analiză gustativă avansată și food pairing cu Vesper AI</li>
+</ul>
                     </div>
                     <div class="card-actions" id="legal">
                         <button type="button" class="btn-preview" onclick="openPreview('cellarkeep')">
@@ -641,11 +642,12 @@
                         </div>
                         <h3>Vaultis</h3>
                         <p>
-                            Aplicație inteligentă de planificare a bugetului personal și urmărire a ciclurilor financiare, asistată de Aegis AI.
+                            Aplicație inteligentă de control al lichidităților, cashflow-ului și obiectivelor financiare, asistată de Aegis AI.
                         </p>
                         <ul class="feature-list">
-                            <li>Control clar asupra cheltuielilor fixe și variabile pe cicluri</li>
-                            <li>Analiză predictivă și scenarii prin asistentul Aegis AI</li>
+                            <li>Vizibilitate clară asupra lichidităților și orizonturilor financiare</li>
+                            <li>Cashflow complet: venituri multiple, cont curent, carduri de credit și arhivă</li>
+                            <li>Rezumat executiv proactiv prin Aegis Insight</li>
                             <li>Sincronizare automată a achizițiilor din CellarKeep</li>
                         </ul>
                     </div>
@@ -762,20 +764,30 @@
         const appPreviews = {
             cellarkeep: {
                 title: "CellarKeep — Cramă Digitală & Vesper AI",
-                desc: "Organizează-ți colecția de vinuri pe rastele virtuale, scanează etichetele instant și primește recomandări personalizate de asociere culinară.",
+                desc: "Organizează-ți colecția de vinuri pe rastele virtuale, urmărește fiecare degustare și descoperă-ți preferințele reale.",
+                highlights: [
+                    "<strong>Istoric complet de consum:</strong> Păstrezi jurnalul sticlelor deschise, notele de degustare și evoluția colecției în timp.",
+                    "<strong>Profil gustativ personal:</strong> Statistici clare generate strict pe baza istoricului tău real (soiuri, regiuni, stiluri preferate).",
+                    "<strong>Profil gustativ avansat (Vesper AI):</strong> Somelierul AI analizează nuanțele din istoricul tău de consum pentru a-ți sugera sticle noi și asocieri culinare."
+                ],
                 slots: [
                     "📸 Captură ecran: Gestiune Rastele (În curând)",
-                    "🍷 Captură ecran: Scanare Etichetă OCR (În curând)",
+                    "📊 Captură ecran: Profil Gustativ & Istoric (În curând)",
                     "🤖 Captură ecran: Vesper AI Sommelier (În curând)"
                 ]
             },
             vaultis: {
-                title: "Vaultis — Buget Personal & Aegis AI",
-                desc: "Planifică ciclurile lunare de buget, urmărește cheltuielile variabile și sincronizează automat achizițiile din CellarKeep.",
+                title: "Vaultis — Lichidități, Cashflow & Aegis AI",
+                desc: "O imagine clară asupra banilor disponibili, a datoriilor pe carduri și a obiectivelor tale, fără zgomot vizual.",
+                highlights: [
+                    "<strong>Dashboard orientat pe claritate:</strong> Vizibilitate instantă asupra lichidităților reale, urmărire neinvazivă a orizonturilor setate și <em>Aegis Insight</em> — rezumatul inteligent care îți semnalează exact ce contează acum.",
+                    "<strong>Modul complet de Cashflow:</strong> Administrare flexibilă pentru surse multiple de venit, cont curent, gestiunea dedicată a cardurilor de credit, obiective (orizonturi) și arhivă istorică.",
+                    "<strong>Ecosistem conectat:</strong> Preia automat achizițiile de vinuri înregistrate în CellarKeep în ciclul bugetar curent."
+                ],
                 slots: [
-                    "📊 Captură ecran: Dashboard Cicluri Buget (În curând)",
-                    "🔄 Captură ecran: Sincronizare CellarKeep (În curând)",
-                    "🛡️ Captură ecran: Analiză Aegis AI (În curând)"
+                    "📊 Captură ecran: Dashboard & Aegis Insight (În curând)",
+                    "💳 Captură ecran: Cashflow, Venituri & Carduri (În curând)",
+                    "🎯 Captură ecran: Orizonturi & Sincronizare (În curând)"
                 ]
             }
         };
@@ -785,7 +797,14 @@
             if (!data) return;
 
             document.getElementById("modalTitle").textContent = data.title;
-            document.getElementById("modalDesc").textContent = data.desc;
+            
+            let descHtml = `<p style="margin-bottom: 14px;">${data.desc}</p>`;
+            if (data.highlights) {
+                descHtml += `<ul class="feature-list" style="margin-bottom: 16px;">` +
+                    data.highlights.map(item => `<li>${item}</li>`).join("") +
+                    `</ul>`;
+            }
+            document.getElementById("modalDesc").innerHTML = descHtml;
 
             const container = document.getElementById("modalShots");
             container.innerHTML = data.slots
@@ -794,7 +813,6 @@
 
             document.getElementById("previewModal").classList.add("active");
         }
-
         function closePreview() {
             document.getElementById("previewModal").classList.remove("active");
         }
