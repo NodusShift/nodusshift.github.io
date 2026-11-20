@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nodus Shift — Redefinim conexiunile. Studio independent de dezvoltare software și aplicații mobile inteligente.">
-    <title>Nodus Shift — Software & AI Studio</title>
+    <meta name="description" content="Nodus Shift — Redefinim conexiunile. Studio independent de dezvoltare software și aplicații mobile interconectate prin AI.">
+    <title>Nodus Shift — Software &amp; AI Studio</title>
     <link rel="icon" type="image/png" href="nodus-logo.png">
     <style>
         :root {
@@ -15,7 +15,7 @@
             --text-secondary: #9ca3af;
             --accent-primary: #8b5cf6;
             --accent-hover: #7c3aed;
-            --wine-accent: #9f1239;
+            --cyan-accent: #06b6d4;
             --border-color: #2d333f;
         }
 
@@ -23,6 +23,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -38,7 +42,7 @@
         a {
             color: inherit;
             text-decoration: none;
-            transition: color 0.2s ease, border-color 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
         }
 
         .container {
@@ -50,9 +54,9 @@
 
         /* Header */
         header {
-            padding: 24px 0;
+            padding: 20px 0;
             border-bottom: 1px solid var(--border-color);
-            background-color: rgba(15, 17, 21, 0.85);
+            background-color: rgba(15, 17, 21, 0.88);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -68,16 +72,16 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 700;
             font-size: 1.25rem;
             letter-spacing: -0.02em;
         }
 
         .brand-logo {
-            width: 28px;
-            height: 28px;
-            border-radius: 7px;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
             object-fit: cover;
         }
 
@@ -94,7 +98,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 88px 0 64px;
+            padding: 80px 0 56px;
             text-align: center;
         }
 
@@ -111,7 +115,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-size: clamp(2.15rem, 5vw, 3.35rem);
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.15;
@@ -122,9 +126,9 @@
         }
 
         .hero p {
-            max-width: 640px;
-            margin: 0 auto 36px;
-            font-size: 1.125rem;
+            max-width: 650px;
+            margin: 0 auto 32px;
+            font-size: 1.1rem;
             color: var(--text-secondary);
         }
 
@@ -132,7 +136,7 @@
         .section-title {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             letter-spacing: -0.02em;
         }
 
@@ -140,7 +144,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
-            margin-bottom: 72px;
+            margin-bottom: 56px;
         }
 
         .card {
@@ -163,7 +167,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .app-icon {
@@ -177,7 +181,6 @@
             background-color: var(--bg-secondary);
             border: 1px solid rgba(255, 255, 255, 0.12);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            font-size: 1.5rem;
         }
 
         .app-icon img {
@@ -185,10 +188,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-        }
-
-        .app-icon.vaultis {
-            background: linear-gradient(135deg, #064e3b, #059669);
         }
 
         .status-tag {
@@ -213,12 +212,12 @@
         .card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .feature-list {
             list-style: none;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             font-size: 0.9rem;
             color: #d1d5db;
         }
@@ -237,27 +236,121 @@
             font-weight: bold;
         }
 
-        .card-links {
+        .card-actions {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 12px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
+        }
+
+        .btn-preview {
+            width: 100%;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background-color: rgba(139, 92, 246, 0.14);
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            color: #ddd6fe;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-preview:hover {
+            background-color: rgba(139, 92, 246, 0.25);
+            border-color: var(--accent-primary);
+            color: #ffffff;
+        }
+
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             font-size: 0.85rem;
         }
 
         .btn-link {
-            padding: 8px 14px;
+            padding: 7px 12px;
             border-radius: 8px;
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            color: var(--text-primary);
+            color: var(--text-secondary);
             font-weight: 500;
         }
 
         .btn-link:hover {
             border-color: var(--accent-primary);
-            color: #c4b5fd;
+            color: var(--text-primary);
+        }
+
+        /* Ecosystem Sync Section */
+        .ecosystem-section {
+            background: linear-gradient(145deg, var(--bg-card), #161922);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px 32px;
+            margin-bottom: 56px;
+        }
+
+        .ecosystem-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .ecosystem-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: rgba(6, 182, 212, 0.12);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: #67e8f9;
+        }
+
+        .ecosystem-section h2 {
+            font-size: 1.45rem;
+            letter-spacing: -0.02em;
+        }
+
+        .ecosystem-intro {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            margin-bottom: 24px;
+            max-width: 780px;
+        }
+
+        .sync-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .sync-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .sync-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sync-item p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* Contact Box */
@@ -265,45 +358,181 @@
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 40px 32px;
-            text-align: center;
-            margin-bottom: 64px;
+            padding: 36px 32px;
+            margin-bottom: 40px;
         }
 
         .contact-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.45rem;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        .contact-section p {
+        .contact-subtitle {
             color: var(--text-secondary);
-            margin-bottom: 24px;
-            max-width: 520px;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 28px;
+            font-size: 0.95rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
         }
 
         .email-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             background-color: var(--accent-primary);
             color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 10px;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .email-btn:hover {
             background-color: var(--accent-hover);
         }
 
+        .inapp-pill {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 8px;
+            background-color: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: #6ee7b7;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* AI Disclaimer */
+        .ai-disclaimer {
+            background-color: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 48px;
+            font-size: 0.84rem;
+            color: #d1d5db;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .ai-disclaimer span.icon {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* Modal Preview */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(6px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 680px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 28px;
+            position: relative;
+        }
+
+        .modal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .modal-close:hover {
+            color: #ffffff;
+            border-color: #6b7280;
+        }
+
+        .screenshots-placeholder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .shot-slot {
+            background-color: var(--bg-secondary);
+            border: 1px dashed #4b5563;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .shot-slot img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
         /* Footer */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-color);
-            padding: 32px 0;
+            padding: 28px 0;
             font-size: 0.875rem;
             color: var(--text-secondary);
         }
@@ -328,7 +557,7 @@
 
         @media (max-width: 600px) {
             .hero {
-                padding: 56px 0 40px;
+                padding: 52px 0 36px;
             }
             .nav-links {
                 display: none;
@@ -350,8 +579,8 @@
             </a>
             <nav class="nav-links">
                 <a href="#aplicatii">Aplicații</a>
-                <a href="#legal">Documente Legale</a>
-                <a href="#contact">Contact</a>
+                <a href="#ecosistem">Sincronizare AI</a>
+                <a href="#contact">Suport &amp; Contact</a>
             </nav>
         </div>
     </header>
@@ -362,7 +591,7 @@
             <span class="badge">Nodus Shift — Redefinim conexiunile</span>
             <h1>Aplicații mobile inteligente, construite pentru claritate.</h1>
             <p>
-                Dezvoltăm un ecosistem de produse software de nișă alimentate de inteligență artificială, proiectate să simplifice gestionarea colecțiilor personale și a deciziilor de zi cu zi.
+                Dezvoltăm un ecosistem de produse software de nișă alimentate de inteligență artificială, proiectate să simplifice gestionarea colecțiilor personale și a bugetului de zi cu zi.
             </p>
         </section>
 
@@ -376,64 +605,144 @@
                     <div>
                         <div class="card-header">
                             <div class="app-icon">
-    <img src="cellarkeep-icon.png" alt="CellarKeep">
-</div>
-                            <span class="status-tag upcoming">In Dezvoltare</span>
+                                <img src="cellarkeep-icon.png" alt="CellarKeep">
+                            </div>
+                            <span class="status-tag">Disponibil în Testing</span>
                         </div>
                         <h3>CellarKeep</h3>
                         <p>
                             Asistentul tău digital pentru managementul cramei personale și al rastelelor de vinuri, asistat de somelierul AI Vesper.
                         </p>
                         <ul class="feature-list">
-                            <li>Scanare rapidă a etichetelor și inventariere pe rastele</li>
-                            <li>Monitorizarea ferestrelor optime de consum</li>
+                            <li>Scanare OCR a etichetelor și inventariere vizuală pe rastele</li>
+                            <li>Monitorizarea ferestrelor optime de maturare și consum</li>
                             <li>Recomandări personalizate de food pairing cu Vesper AI</li>
                         </ul>
                     </div>
-                    <div class="card-links" id="legal">
-                        <a href="cellarkeep-privacy.html" class="btn-link">Privacy Policy</a>
-                        <a href="cellarkeep-terms.html" class="btn-link">Terms &amp; Conditions</a>
+                    <div class="card-actions" id="legal">
+                        <button type="button" class="btn-preview" onclick="openPreview('cellarkeep')">
+                            📱 Prezentare aplicație
+                        </button>
+                        <div class="card-links">
+                            <a href="cellarkeep-privacy.html" class="btn-link">Privacy Policy</a>
+                            <a href="cellarkeep-terms.html" class="btn-link">Terms &amp; Conditions</a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Vaultis Card (Ecosystem Preview) -->
+                <!-- Vaultis Card -->
                 <article class="card">
                     <div>
                         <div class="card-header">
                             <div class="app-icon">
-    <img src="vaultis-icon.png" alt="Vaultis">
-</div>
+                                <img src="vaultis-icon.png" alt="Vaultis">
+                            </div>
                             <span class="status-tag upcoming">În Dezvoltare</span>
                         </div>
                         <h3>Vaultis</h3>
                         <p>
-                            Aplicație inteligentă de planificare a bugetului personal și urmărire a obiectivelor financiare, interconectată în ecosistemul Nodus Shift.
+                            Aplicație inteligentă de planificare a bugetului personal și urmărire a ciclurilor financiare, asistată de Aegis AI.
                         </p>
                         <ul class="feature-list">
-                            <li>Urmărire fără fricțiune a cheltuielilor variabile</li>
-                            <li>Analiză predictivă prin asistentul Aegis AI</li>
-                            <li>Sincronizare contextuală cu aplicațiile din suită</li>
+                            <li>Control clar asupra cheltuielilor fixe și variabile pe cicluri</li>
+                            <li>Analiză predictivă și scenarii prin asistentul Aegis AI</li>
+                            <li>Sincronizare automată a achizițiilor din CellarKeep</li>
                         </ul>
                     </div>
-                    <div class="card-links">
-                        <span style="color: var(--text-secondary); font-size: 0.85rem;">Lansare programată în curând</span>
+                    <div class="card-actions">
+                        <button type="button" class="btn-preview" onclick="openPreview('vaultis')">
+                            📱 Prezentare aplicație
+                        </button>
+                        <div class="card-links">
+                            <span style="color: var(--text-secondary); font-size: 0.85rem; padding: 6px 0;">Documente legale disponibile la lansare</span>
+                        </div>
                     </div>
                 </article>
 
             </div>
         </section>
 
+        <!-- Ecosystem & Security Sync Section -->
+        <section id="ecosistem" class="ecosystem-section">
+            <div class="ecosystem-header">
+                <h2>Ecosistem Conectat: CellarKeep ↔ Vaultis</h2>
+                <span class="ecosystem-badge">Sincronizare Securizată</span>
+            </div>
+            <p class="ecosystem-intro">
+                Aplicațiile Nodus Shift pot funcționa independent sau conectate între ele. Când înregistrezi o sticlă nouă cu preț în <strong>CellarKeep</strong>, valoarea achiziției poate fi sincronizată automat în ciclul bugetar curent din <strong>Vaultis</strong> — fără să introduci datele de două ori.
+            </p>
+            <div class="sync-grid">
+                <div class="sync-item">
+                    <h4>🔐 Izolare strictă pe User ID</h4>
+                    <p>
+                        Conexiunea se realizează exclusiv între conturile aceluiași utilizator autentificat, pe baza unui <code>user_id</code> unic și a politicilor de securitate la nivel de rând (Row Level Security).
+                    </p>
+                </div>
+                <div class="sync-item">
+                    <h4>🛡️ Gateway Criptat (HTTPS / TLS)</h4>
+                    <p>
+                        Transferul se face printr-un canal securizat server-to-server, transmițând strict metadatele tranzacției (sumă, dată, categorie), fără a expune restul datelor din cramă sau buget.
+                    </p>
+                </div>
+                <div class="sync-item">
+                    <h4>⚙️ Control Total al Utilizatorului</h4>
+                    <p>
+                        Sincronizarea este opțională. Tu decizi dacă și când conectezi cele două aplicații, putând dezactiva oricând legătura direct din setări.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact -->
         <section id="contact" class="contact-section">
             <h2>Suport &amp; Contact</h2>
-            <p>
-                Ai întrebări legate de aplicațiile noastre, dorești să raportezi o problemă sau să soliciți ștergerea datelor contului? Scrie-ne direct.
+            <p class="contact-subtitle">
+                Ai nevoie de ajutor, vrei să propui o funcționalitate nouă pentru Vesper AI / Aegis AI sau dorești să soliciți ștergerea contului? Alege metoda cea mai comodă:
             </p>
-            <a href="mailto:nodus.shift@gmail.com" class="email-btn">
-                ✉️ nodus.shift@gmail.com
-            </a>
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div>
+                        <h3>💬 Direct din aplicație (In-App Chat)</h3>
+                        <p>
+                            Cea mai rapidă metodă pentru utilizatorii activi. Deschide secțiunea <strong>Setări → Suport / Chat</strong> din CellarKeep sau Vaultis pentru a ne scrie direct.
+                        </p>
+                    </div>
+                    <span class="inapp-pill">Disponibil în meniul aplicației</span>
+                </div>
+                <div class="contact-card">
+                    <div>
+                        <h3>✉️ Suport prin Email</h3>
+                        <p>
+                            Pentru întrebări generale, feedback detaliat sau solicitări oficiale privind confidențialitatea și ștergerea datelor contului.
+                        </p>
+                    </div>
+                    <a href="mailto:nodus.shift@gmail.com" class="email-btn">
+                        nodus.shift@gmail.com
+                    </a>
+                </div>
+            </div>
         </section>
+
+        <!-- AI Disclaimer -->
+        <aside class="ai-disclaimer" role="note">
+            <span class="icon" aria-hidden="true">ℹ️</span>
+            <div>
+                <strong>Notă privind conținutul generat cu Inteligență Artificială:</strong> Răspunsurile, recomandările enologice și de food pairing (Vesper AI), precum și analizele financiare (Aegis AI) sunt generate automat pe baza modelelor AI și au caracter exclusiv informativ și orientativ. Acestea pot conține erori sau inexactități și nu reprezintă consultanță profesională; deciziile finale aparțin în totalitate utilizatorului.
+            </div>
+        </aside>
     </main>
+
+    <!-- Preview Modal (Gata pentru screenshots) -->
+    <div id="previewModal" class="modal-backdrop" onclick="closePreviewOnBackdrop(event)">
+        <div class="modal-box">
+            <div class="modal-top">
+                <h3 id="modalTitle">Prezentare aplicație</h3>
+                <button type="button" class="modal-close" onclick="closePreview()" aria-label="Închide">&times;</button>
+            </div>
+            <p id="modalDesc" style="color: var(--text-secondary); font-size: 0.95rem;"></p>
+            <div id="modalShots" class="screenshots-placeholder"></div>
+        </div>
+    </div>
 
     <footer>
         <div class="container footer-content">
@@ -443,10 +752,58 @@
             <div class="footer-links">
                 <a href="cellarkeep-privacy.html">CellarKeep Privacy</a>
                 <a href="cellarkeep-terms.html">CellarKeep Terms</a>
-                <a href="mailto:nodus.shift@gmail.com">Contact</a>
+                <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const appPreviews = {
+            cellarkeep: {
+                title: "CellarKeep — Cramă Digitală & Vesper AI",
+                desc: "Organizează-ți colecția de vinuri pe rastele virtuale, scanează etichetele instant și primește recomandări personalizate de asociere culinară.",
+                slots: [
+                    "📸 Captură ecran: Gestiune Rastele (În curând)",
+                    "🍷 Captură ecran: Scanare Etichetă OCR (În curând)",
+                    "🤖 Captură ecran: Vesper AI Sommelier (În curând)"
+                ]
+            },
+            vaultis: {
+                title: "Vaultis — Buget Personal & Aegis AI",
+                desc: "Planifică ciclurile lunare de buget, urmărește cheltuielile variabile și sincronizează automat achizițiile din CellarKeep.",
+                slots: [
+                    "📊 Captură ecran: Dashboard Cicluri Buget (În curând)",
+                    "🔄 Captură ecran: Sincronizare CellarKeep (În curând)",
+                    "🛡️ Captură ecran: Analiză Aegis AI (În curând)"
+                ]
+            }
+        };
+
+        function openPreview(appKey) {
+            const data = appPreviews[appKey];
+            if (!data) return;
+
+            document.getElementById("modalTitle").textContent = data.title;
+            document.getElementById("modalDesc").textContent = data.desc;
+
+            const container = document.getElementById("modalShots");
+            container.innerHTML = data.slots
+                .map(text => `<div class="shot-slot">${text}</div>`)
+                .join("");
+
+            document.getElementById("previewModal").classList.add("active");
+        }
+
+        function closePreview() {
+            document.getElementById("previewModal").classList.remove("active");
+        }
+
+        function closePreviewOnBackdrop(event) {
+            if (event.target.id === "previewModal") {
+                closePreview();
+            }
+        }
+    </script>
 
 </body>
 </html>
