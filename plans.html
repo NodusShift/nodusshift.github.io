@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planuri &amp; Credite AI — Nodus Shift</title>
+    <link rel="icon" type="image/png" href="nodus-logo.png">
+    <style>
+        :root {
+            --bg-primary: #0f1115;
+            --bg-secondary: #171a21;
+            --bg-card: #1e222b;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-primary: #8b5cf6;
+            --cyan-accent: #06b6d4;
+            --border-color: #2d333f;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+        .back-link {
+            display: inline-block;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .header-block {
+            margin-bottom: 36px;
+        }
+        .header-block h1 {
+            font-size: clamp(1.8rem, 4vw, 2.35rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+        .header-block p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 720px;
+        }
+        .testing-banner {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 36px;
+            font-size: 0.93rem;
+            color: #d1fae5;
+        }
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 44px;
+        }
+        .tier-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tier-card.featured {
+            border-color: rgba(139, 92, 246, 0.55);
+            background: linear-gradient(160deg, #222632, #1a1d26);
+        }
+        .tier-badge {
+            display: inline-block;
+            width: fit-content;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: rgba(139, 92, 246, 0.16);
+            color: #c4b5fd;
+            margin-bottom: 12px;
+        }
+        .tier-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .tier-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            font-size: 0.92rem;
+            color: #d1d5db;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+        .credits-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+        .credits-box h2 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+        .rule-highlight {
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--cyan-accent);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 16px 0 24px;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+        }
+        .actions-split {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .action-col {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .action-col h3 {
+            font-size: 1.02rem;
+            margin-bottom: 12px;
+            color: #f3f4f6;
+        }
+        .action-col ul {
+            padding-left: 18px;
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+        .action-col li {
+            margin-bottom: 8px;
+        }
+        .data-guarantee {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            text-align: center;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Înapoi la Nodus Shift</a>
+
+        <div class="header-block">
+            <h1>Planuri de utilizare &amp; Credite AI</h1>
+            <p>
+                Aplicațiile Nodus Shift sunt construite astfel încât funcțiile de bază de organizare să rămână mereu rapide și accesibile, iar procesările avansate cu inteligență artificială să funcționeze transparent, pe bază de credite.
+            </p>
+        </div>
+
+        <div class="testing-banner">
+            <strong>Status curent (Open Testing / Early Access):</strong> În perioada de testare publică, abonamentele comerciale nu sunt încă activate. Utilizatorii primesc acces promoțional gratuit pentru a testa atât funcțiile standard, cât și asistenții AI (Vesper AI și Aegis AI).
+        </div>
+
+        <!-- Tiers Comparison -->
+        <section class="tiers-grid">
+            <article class="tier-card">
+                <div>
+                    <span class="tier-badge">Nivel de bază</span>
+                    <h2>Essentials</h2>
+                    <p class="tier-subtitle">
+                        Tot ce ai nevoie pentru evidența zilnică a cramei și a bugetului personal, fără limite de timp.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Gestiune completă a sticlelor, rastelelor și istoricului de consum (CellarKeep)</li>
+                        <li>Profil gustativ personal calculat pe baza istoricului tău real</li>
+                        <li>Dashboard lichidități, cashflow, carduri de credit și orizonturi (Vaultis)</li>
+                        <li>Sincronizare securizată CellarKeep &harr; Vaultis</li>
+                        <li>Cotă lunară de bază de credite AI inclusă</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="tier-card featured">
+                <div>
+                    <span class="tier-badge">Experiență completă</span>
+                    <h2>Reserve</h2>
+                    <p class="tier-subtitle">
+                        Conceput pentru colecționari activi și utilizatori care folosesc frecvent analiza AI.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Toate funcționalitățile din nivelul Essentials</li>
+                        <li>Alocare lunară extinsă de credite AI pentru utilizare intensivă</li>
+                        <li>Acces prioritar la funcțiile avansate Vesper AI și Aegis Insight</li>
+                        <li>Suport prioritar direct din aplicație</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- AI Credits Logic -->
+        <section class="credits-box">
+            <h2>Cum se consumă creditele AI?</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Fără calcule complicate sau costuri ascunse în funcție de lungimea textului:
+            </p>
+
+            <div class="rule-highlight">
+                <strong>Regula simplă Nodus Shift:</strong> Orice acțiune procesată cu Inteligență Artificială consumă <strong>1 credit AI</strong>, indiferent de tipul acțiunii sau de aplicația din ecosistem.
+            </div>
+
+            <div class="actions-split">
+                <div class="action-col">
+                    <h3>⚡ Consumă 1 credit AI / acțiune</h3>
+                    <ul>
+                        <li><strong>CellarKeep:</strong> Scanarea OCR a unei etichete de vin</li>
+                        <li><strong>CellarKeep:</strong> Recomandare culinară (food pairing) cu Vesper AI</li>
+                        <li><strong>CellarKeep:</strong> Generarea profilului gustativ avansat cu Vesper AI</li>
+                        <li><strong>Vaultis:</strong> Evaluare financiară (Aegis Insight) sau interogare Aegis AI</li>
+                    </ul>
+                </div>
+
+                <div class="action-col">
+                    <h3>✅ Gratuit (0 credite AI)</h3>
+                    <ul>
+                        <li>Adăugarea, editarea sau consumul sticlelor din cramă</li>
+                        <li>Consultarea istoricului de consum și a profilului gustativ statistic</li>
+                        <li>Înregistrarea veniturilor, cheltuielilor, cardurilor și orizonturilor în Vaultis</li>
+                        <li>Sincronizarea automată a achizițiilor între CellarKeep și Vaultis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <p class="data-guarantee">
+            Datele tale rămân întotdeauna ale tale: dacă îți epuizezi creditele AI într-o lună sau revii la planul gratuit, aplicațiile continuă să funcționeze normal pentru administrarea manuală, iar înregistrările tale nu sunt șterse niciodată.
+        </p>
+    </div>
+</body>
+</html>
