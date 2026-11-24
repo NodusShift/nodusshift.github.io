@@ -8,6 +8,7 @@
     <style>
         :root {
             --bg-primary: #0f1115;
+            --bg-secondary: #171a21;
             --bg-card: #1e222b;
             --text-primary: #f3f4f6;
             --text-secondary: #9ca3af;
@@ -36,8 +37,17 @@
             border-radius: 16px;
             padding: 36px;
         }
+        .short-version {
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--accent-primary);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            font-size: 0.93rem;
+            color: #e5e7eb;
+        }
         h1 { font-size: 1.85rem; margin-bottom: 8px; }
-        .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 28px; }
+        .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; }
         h2 { font-size: 1.2rem; margin: 28px 0 10px; color: #e5e7eb; }
         p, li { color: #d1d5db; font-size: 0.95rem; margin-bottom: 12px; }
         ul { padding-left: 22px; margin-bottom: 16px; }
@@ -51,46 +61,62 @@
             <h1>Politica de Confidențialitate — CellarKeep</h1>
             <p class="meta">Ultima actualizare: Noiembrie 2026 &bull; Dezvoltat de Nodus Shift</p>
 
+            <div class="short-version">
+                <strong>Pe scurt:</strong> Crama ta îți aparține și nimeni altcineva nu o vede. Nu vindem datele tale, nu afișăm reclame, nu folosim trackere de publicitate, iar datele sunt stocate securizat în Uniunea Europeană.
+            </div>
+
             <p>
-                Această Politică de Confidențialitate explică modul în care aplicația mobilă <strong>CellarKeep</strong> („Aplicația”), dezvoltată de <strong>Nodus Shift</strong>, colectează, utilizează și protejează datele dumneavoastră cu caracter personal în conformitate cu Regulamentul General privind Protecția Datelor (GDPR — Regulamentul UE 2016/679).
+                Această Politică de Confidențialitate explică modul în care aplicația mobilă <strong>CellarKeep</strong> („Aplicația”), operată de <strong>Nodus Shift</strong>, colectează, utilizează și protejează datele dumneavoastră în conformitate cu Regulamentul General privind Protecția Datelor (GDPR — Regulamentul UE 2016/679).
             </p>
 
             <h2>1. Datele pe care le colectăm</h2>
             <ul>
-                <li><strong>Date de autentificare și cont:</strong> Adresa de e-mail, numele afișat și identificatorul unic de utilizator (<code>user_id</code>) obținute la autentificarea prin Google OAuth sau e-mail.</li>
-                <li><strong>Date introduse în aplicație:</strong> Detaliile colecției dumneavoastră de vinuri (producător, soi, an, regiune, poziționare pe rastele, preț de achiziție, note de degustare și istoricul de consum).</li>
-                <li><strong>Imagini (Etichete de vin):</strong> Fotografiile încărcate voluntar pentru scanarea OCR a etichetelor.</li>
-                <li><strong>Interacțiuni cu Vesper AI și mesaje de suport:</strong> Întrebările adresate asistentului Vesper AI și mesajele trimise prin modulul de suport din aplicație.</li>
+                <li><strong>Date de cont și autentificare:</strong> Adresa de e-mail, numele afișat și identificatorul unic de utilizator (<code>user_id</code>) obținute la conectarea prin Google OAuth sau e-mail.</li>
+                <li><strong>Date introduse în cramă:</strong> Detaliile sticlelor de vin (producător, soi, an, regiune, poziționare pe rastele, preț de achiziție, ferestre de consum, note de degustare și istoricul de consum).</li>
+                <li><strong>Imagini (Etichete de vin):</strong> Fotografiile încărcate voluntar pentru recunoașterea optică (OCR) a etichetelor.</li>
+                <li><strong>Interacțiuni cu Vesper AI și suport:</strong> Întrebările adresate asistentului Vesper AI (pentru recomandări culinare sau profil gustativ) și mesajele transmise prin modulul de suport din aplicație.</li>
+                <li><strong>Date tehnice minime:</strong> Limba dispozitivului și jetoanele de sesiune necesare menținerii autentificării.</li>
             </ul>
 
-            <h2>2. Scopul prelucrării datelor</h2>
+            <h2>2. Ce NU colectăm</h2>
             <ul>
-                <li>Furnizarea funcționalităților de gestionare a cramei personale, a istoricului de consum și a profilului gustativ.</li>
-                <li>Procesarea imaginilor etichetelor și generarea recomandărilor enologice / de food pairing prin <strong>Vesper AI</strong>.</li>
-                <li>Sincronizarea opțională a valorii achizițiilor de vinuri către aplicația <strong>Vaultis</strong> (doar dacă activați această funcție și folosiți același cont).</li>
-                <li>Asigurarea suportului tehnic și îmbunătățirea stabilității aplicației.</li>
+                <li>Nu folosim SDK-uri de publicitate, brokeri de date și nu vindem date către terți.</li>
+                <li>Nu colectăm locația GPS, agenda de contacte, numărul de telefon sau mesajele personale.</li>
+                <li>Nu realizăm amprentare digitală (device fingerprinting) în scop de marketing.</li>
             </ul>
 
-            <h2>3. Procesatori terți și infrastructură</h2>
-            <p>Pentru funcționarea tehnică a aplicației utilizăm furnizori de servicii conformi GDPR:</p>
+            <h2>3. Scopul și temeiul legal (GDPR Art. 6)</h2>
             <ul>
-                <li><strong>Supabase:</strong> Găzduirea securizată a bazei de date, autentificare și stocare criptată, cu politici stricte de izolare a datelor pe utilizator (Row Level Security).</li>
-                <li><strong>Google (Google OAuth &amp; Google Gemini API):</strong> Autentificarea contului și procesarea solicitărilor AI (OCR etichete și recomandări Vesper AI). Datele trimise către API-ul AI nu sunt vândute către terți.</li>
+                <li><strong>Furnizarea aplicației (Executarea contractului — Art. 6 alin. 1 lit. b):</strong> Gestionarea cramei personale, a istoricului de consum, a profilului gustativ și a funcțiilor Vesper AI.</li>
+                <li><strong>Sincronizarea cu Vaultis (Consimțământ / Executarea contractului):</strong> Transmiterea opțională a valorii achizițiilor de vinuri către aplicația <strong>Vaultis</strong>, doar dacă activați această opțiune pe același cont.</li>
+                <li><strong>Securitate, prevenirea abuzurilor și suport (Interes legitim — Art. 6 alin. 1 lit. f):</strong> Menținerea stabilității serviciului și rezolvarea solicitărilor trimise de dumneavoastră.</li>
             </ul>
 
-            <h2>4. Sincronizarea cu aplicația Vaultis</h2>
+            <h2>4. Unde sunt stocate datele și procesatorii terți</h2>
+            <p>Niciun furnizor terț nu are dreptul să utilizeze datele dumneavoastră în scopuri proprii de marketing:</p>
+            <ul>
+                <li><strong>Supabase (Uniunea Europeană):</strong> Baza de date, autentificarea și stocarea fișierelor sunt găzduite în UE, cu criptare în tranzit (TLS) și politici stricte de izolare a datelor pe utilizator (Row Level Security).</li>
+                <li><strong>Google (Google OAuth &amp; Google Gemini API):</strong> Autentificarea contului și procesarea solicitărilor AI (OCR etichete, analiză gustativă și recomandări Vesper AI). Solicitările trimise către API-ul AI conțin strict datele necesare sarcinii (fără numele sau adresa dumneavoastră de e-mail) și <strong>nu sunt utilizate pentru antrenarea modelelor AI publice</strong>.</li>
+            </ul>
+
+            <h2>5. Sincronizarea cu aplicația Vaultis</h2>
             <p>
-                Dacă alegeți să conectați CellarKeep cu <strong>Vaultis</strong>, aplicația transmite exclusiv datele necesare înregistrării cheltuielii (suma, data și categoria achiziției) printr-un canal criptat (HTTPS/TLS), asociat strict identificatorului dumneavoastră unic (<code>user_id</code>). Puteți dezactiva oricând această sincronizare din setări.
+                Dacă alegeți să conectați CellarKeep cu <strong>Vaultis</strong>, aplicația transmite exclusiv metadatele tranzacției (suma, data și categoria achiziției) printr-un canal securizat server-to-server (HTTPS/TLS), asociat strict identificatorului dumneavoastră unic (<code>user_id</code>). Puteți dezactiva oricând această legătură din setări.
             </p>
 
-            <h2>5. Păstrarea și ștergerea datelor</h2>
+            <h2>6. Păstrarea și ștergerea datelor</h2>
             <p>
-                Datele dumneavoastră sunt păstrate atât timp cât aveți un cont activ. Aveți dreptul de acces, rectificare, portabilitate și ștergere a datelor („dreptul de a fi uitat”). Puteți solicita ștergerea completă a contului și a tuturor datelor asociate direct din setările aplicației sau trimițând un e-mail la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a>. Solicitările sunt procesate în maximum 30 de zile.
+                Datele dumneavoastră sunt păstrate cât timp aveți un cont activ. Ștergerea contului elimină definitiv toate datele personale și înregistrările din cramă. Puteți iniția ștergerea direct din setările aplicației sau trimițând o solicitare la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> (procesată în maximum 30 de zile).
             </p>
 
-            <h2>6. Contact</h2>
+            <h2>7. Drepturile dumneavoastră (GDPR)</h2>
             <p>
-                Pentru orice întrebări legate de confidențialitate, ne puteți contacta la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> sau prin secțiunea Suport & Contact din aplicație.
+                Beneficiați de dreptul de acces, rectificare, portabilitate, restricționare, opoziție și ștergere a datelor („dreptul de a fi uitat”). De asemenea, aveți dreptul de a depune o plângere la <strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong> din România (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>).
+            </p>
+
+            <h2>8. Contact</h2>
+            <p>
+                Pentru orice întrebări privind confidențialitatea, scrieți-ne la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> sau folosiți secțiunea <em>Setări &rarr; Suport &amp; Contact</em> din aplicație.
             </p>
         </div>
     </div>
