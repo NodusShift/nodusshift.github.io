@@ -8,6 +8,7 @@
     <style>
         :root {
             --bg-primary: #0f1115;
+            --bg-secondary: #171a21;
             --bg-card: #1e222b;
             --text-primary: #f3f4f6;
             --text-secondary: #9ca3af;
@@ -36,8 +37,17 @@
             border-radius: 16px;
             padding: 36px;
         }
+        .short-version {
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--accent-primary);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            font-size: 0.93rem;
+            color: #e5e7eb;
+        }
         h1 { font-size: 1.85rem; margin-bottom: 8px; }
-        .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 28px; }
+        .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; }
         h2 { font-size: 1.2rem; margin: 28px 0 10px; color: #e5e7eb; }
         p, li { color: #d1d5db; font-size: 0.95rem; margin-bottom: 12px; }
         ul { padding-left: 22px; margin-bottom: 16px; }
@@ -51,39 +61,55 @@
             <h1>Politica de Confidențialitate — Vaultis</h1>
             <p class="meta">Ultima actualizare: Noiembrie 2026 &bull; Dezvoltat de Nodus Shift</p>
 
+            <div class="short-version">
+                <strong>Pe scurt:</strong> Datele tale financiare îți aparțin exclusiv ție. Nu cerem parole bancare sau numere de card, nu vindem date, nu afișăm reclame, iar totul este stocat criptat în Uniunea Europeană.
+            </div>
+
             <p>
-                Această Politică de Confidențialitate descrie modul în care aplicația mobilă <strong>Vaultis</strong> („Aplicația”), dezvoltată de <strong>Nodus Shift</strong>, colectează, procesează și protejează datele dumneavoastră în conformitate cu Regulamentul General privind Protecția Datelor (GDPR — Regulamentul UE 2016/679).
+                Această Politică de Confidențialitate descrie modul în care aplicația mobilă <strong>Vaultis</strong> („Aplicația”), operată de <strong>Nodus Shift</strong>, colectează, procesează și protejează datele dumneavoastră în conformitate cu Regulamentul General privind Protecția Datelor (GDPR — Regulamentul UE 2016/679).
             </p>
 
             <h2>1. Datele pe care le colectăm</h2>
             <ul>
-                <li><strong>Date de autentificare:</strong> Adresa de e-mail, numele și identificatorul unic de utilizator (<code>user_id</code>) obținute la conectarea prin Google OAuth sau e-mail.</li>
-                <li><strong>Date de planificare financiară introduse de utilizator:</strong> Înregistrări introduse voluntar privind veniturile, soldurile de referință ale contului curent, limitele/rulajele cardurilor de credit, cheltuielile pe cicluri bugetare și obiectivele financiare („Orizonturi”).</li>
-                <li><strong>Ce NU colectăm:</strong> Vaultis <strong>nu</strong> solicită și <strong>nu</strong> stochează credențiale bancare (user/parolă internet banking), numere complete de card bancar (PAN), coduri CVV sau PIN-uri.</li>
+                <li><strong>Date de cont și autentificare:</strong> Adresa de e-mail, numele afișat și identificatorul unic de utilizator (<code>user_id</code>) obținute la conectarea prin Google OAuth sau e-mail.</li>
+                <li><strong>Date de planificare financiară introduse manual:</strong> Înregistrările introduse voluntar privind sursele de venit, soldurile de referință ale contului curent, limitele/rulajele cardurilor de credit, cheltuielile pe cicluri bugetare, arhiva și obiectivele financiare („Orizonturi”).</li>
                 <li><strong>Interacțiuni cu Aegis AI și suport:</strong> Contextul sumarizat necesar generării rezumatelor <em>Aegis Insight</em> și mesajele transmise prin modulul de suport din aplicație.</li>
+                <li><strong>Date tehnice minime:</strong> Limba dispozitivului și jetoanele de sesiune necesare menținerii autentificării.</li>
             </ul>
 
-            <h2>2. Scopul prelucrării datelor</h2>
+            <h2>2. Ce NU colectăm</h2>
             <ul>
-                <li>Afișarea Dashboard-ului de lichidități, gestionarea cashflow-ului, a cardurilor de credit și a obiectivelor financiare (Orizonturi).</li>
-                <li>Generarea analizelor și rezumatelor de buget prin asistentul <strong>Aegis AI</strong>.</li>
-                <li>Recepționarea automată (opțională) a cheltuielilor cu achizițiile de vinuri sincronizate din aplicația <strong>CellarKeep</strong> pe baza aceluiași <code>user_id</code>.</li>
-                <li>Asigurarea suportului tehnic și a securității contului.</li>
+                <li><strong>Fără date bancare sensibile:</strong> Vaultis <strong>nu</strong> solicită și <strong>nu</strong> stochează credențiale bancare (user/parolă internet banking), numere complete de card bancar (PAN), coduri CVV sau PIN-uri.</li>
+                <li>Nu folosim SDK-uri de publicitate, brokeri de date și nu vindem sau închiriem datele dumneavoastră financiare.</li>
+                <li>Nu colectăm locația GPS, agenda de contacte sau mesajele personale.</li>
             </ul>
 
-            <h2>3. Securitatea datelor și procesatori terți</h2>
+            <h2>3. Scopul și temeiul legal (GDPR Art. 6)</h2>
+            <ul>
+                <li><strong>Furnizarea aplicației (Executarea contractului — Art. 6 alin. 1 lit. b):</strong> Afișarea Dashboard-ului de lichidități, gestionarea cashflow-ului, a cardurilor de credit, a obiectivelor (Orizonturi) și a rezumatelor Aegis Insight.</li>
+                <li><strong>Sincronizarea cu CellarKeep (Consimțământ / Executarea contractului):</strong> Recepționarea opțională a cheltuielilor cu achizițiile de vinuri din aplicația <strong>CellarKeep</strong> pe baza aceluiași <code>user_id</code>.</li>
+                <li><strong>Securitate și suport tehnic (Interes legitim — Art. 6 alin. 1 lit. f):</strong> Protejarea integrității contului și soluționarea mesajelor de suport.</li>
+            </ul>
+
+            <h2>4. Unde sunt stocate datele și procesatorii terți</h2>
+            <ul>
+                <li><strong>Supabase (Uniunea Europeană):</strong> Baza de date și autentificarea sunt găzduite în UE, cu criptare în tranzit (HTTPS/TLS) și politici stricte de izolare a datelor pe utilizator (Row Level Security).</li>
+                <li><strong>Google (Google OAuth &amp; Google Gemini API):</strong> Autentificarea contului și generarea analizelor <em>Aegis Insight</em>. Datele sumarizate trimise către API-ul AI nu includ numele sau adresa dumneavoastră de e-mail și <strong>nu sunt utilizate pentru antrenarea modelelor AI publice</strong>.</li>
+            </ul>
+
+            <h2>5. Păstrarea și ștergerea datelor</h2>
             <p>
-                Toate comunicațiile sunt criptate în tranzit prin HTTPS/TLS. Datele sunt stocate în infrastructura <strong>Supabase</strong> cu politici stricte de izolare la nivel de rând (Row Level Security), astfel încât fiecare utilizator are acces exclusiv la propriile înregistrări. Pentru autentificare și funcțiile <strong>Aegis AI</strong> utilizăm serviciile <strong>Google (OAuth și Gemini API)</strong>. Datele dumneavoastră financiare nu sunt niciodată vândute, închiriate sau utilizate pentru publicitate.
+                Puteți modifica, arhiva sau șterge înregistrările financiare oricând din aplicație. Ștergerea contului elimină definitiv toate datele personale și financiare asociate. Puteți solicita ștergerea contului direct din setările aplicației sau trimițând un e-mail la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> (procesată în maximum 30 de zile).
             </p>
 
-            <h2>4. Păstrarea și ștergerea datelor</h2>
+            <h2>6. Drepturile dumneavoastră (GDPR)</h2>
             <p>
-                Puteți modifica, arhiva sau șterge înregistrările financiare oricând din aplicație. Pentru ștergerea completă a contului Vaultis și a tuturor datelor asociate, puteți utiliza opțiunea din setările aplicației sau ne puteți trimite o solicitare la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a>. Datele vor fi șterse definitiv în maximum 30 de zile.
+                Beneficiați de dreptul de acces, rectificare, portabilitate, restricționare, opoziție și ștergere a datelor („dreptul de a fi uitat”). Aveți, de asemenea, dreptul de a depune o plângere la <strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong> din România (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>).
             </p>
 
-            <h2>5. Contact</h2>
+            <h2>7. Contact</h2>
             <p>
-                Pentru întrebări privind protecția datelor, ne puteți contacta la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> sau direct din aplicație (<em>Setări &rarr; Suport / Chat</em>).
+                Pentru întrebări privind confidențialitatea, scrieți-ne la <a href="mailto:nodus.shift@gmail.com">nodus.shift@gmail.com</a> sau folosiți secțiunea <em>Setări &rarr; Suport &amp; Contact</em> din aplicație.
             </p>
         </div>
     </div>
