@@ -710,6 +710,117 @@
             </div>
         </section>
 
+        <!-- Lightbox pentru mărire captură la click -->
+    <div id="zoomOverlay" class="zoom-overlay" onclick="closeZoom()">
+        <img id="zoomImg" src="" alt="Captură mărită">
+    </div>
+
+    <script>
+        const appPreviews = {
+            cellarkeep: {
+                title: "CellarKeep — Cramă Digitală & Vesper AI",
+                desc: "Organizează-ți colecția de vinuri pe rastele virtuale, urmărește fiecare degustare și descoperă-ți preferințele reale.",
+                highlights: [
+                    "<strong>Istoric complet de consum:</strong> Păstrezi jurnalul sticlelor deschise, notele de degustare și evoluția colecției în timp.",
+                    "<strong>Profil gustativ personal:</strong> Statistici clare generate strict pe baza istoricului tău real (soiuri, regiuni, stiluri preferate).",
+                    "<strong>Profil gustativ avansat (Vesper AI):</strong> Somelierul AI analizează nuanțele din istoricul tău de consum pentru a-ți sugera sticle noi și asocieri culinare."
+                ],
+                slots: [
+                    {
+                        img: "screenshots/ck_1.png",
+                        title: "Gestiune Rastele & Cramă",
+                        caption: "Vizualizezi rapid sticlele din colecție, poziționarea pe rastele și ferestrele optime de consum."
+                    },
+                    {
+                        img: "screenshots/ck_2.png",
+                        title: "Istoric & Profil Gustativ",
+                        caption: "Statistici generate automat din degustările tale anterioare: soiuri, regiuni și stiluri preferate."
+                    },
+                    {
+                        img: "screenshots/ck_3.png",
+                        title: "Somelierul Vesper AI",
+                        caption: "Scanare OCR a etichetelor și recomandări personalizate de food pairing pe baza sticlelor tale."
+                    }
+                ]
+            },
+            vaultis: {
+                title: "Vaultis — Lichidități, Cashflow & Aegis AI",
+                desc: "O imagine clară asupra banilor disponibili, a datoriilor pe carduri și a obiectivelor tale, fără zgomot vizual.",
+                highlights: [
+                    "<strong>Dashboard orientat pe claritate:</strong> Vizibilitate instantă asupra lichidităților reale, urmărire neinvazivă a orizonturilor setate și <em>Aegis Insight</em> — rezumatul inteligent care îți semnalează exact ce contează acum.",
+                    "<strong>Modul complet de Cashflow:</strong> Administrare flexibilă pentru surse multiple de venit, cont curent, gestiunea dedicată a cardurilor de credit, obiective (orizonturi) și arhivă istorică.",
+                    "<strong>Ecosistem conectat:</strong> Preia automat achizițiile de vinuri înregistrate în CellarKeep în ciclul bugetar curent."
+                ],
+                slots: [
+                    {
+                        img: "screenshots/v_1.png",
+                        title: "Dashboard & Aegis Insight",
+                        caption: "Soldul disponibil real, progresul obiectivelor și rezumatul AI cu aspectele financiare prioritare."
+                    },
+                    {
+                        img: "screenshots/v_2.png",
+                        title: "Cashflow & Carduri de Credit",
+                        caption: "Control complet asupra veniturilor multiple, contului curent, rulajului pe carduri și cheltuielilor."
+                    },
+                    {
+                        img: "screenshots/v_3.png",
+                        title: "Orizonturi & Istoric",
+                        caption: "Urmărire neinvazivă a obiectivelor financiare și arhiva ciclurilor lunare anterioare."
+                    }
+                ]
+            }
+        };
+
+        function openPreview(appKey) {
+            const data = appPreviews[appKey];
+            if (!data) return;
+
+            document.getElementById("modalTitle").textContent = data.title;
+
+            let descHtml = `<p style="margin-bottom: 14px;">${data.desc}</p>`;
+            if (data.highlights) {
+                descHtml += `<ul class="feature-list" style="margin-bottom: 16px;">` +
+                    data.highlights.map(item => `<li>${item}</li>`).join("") +
+                    `</ul>`;
+            }
+            document.getElementById("modalDesc").innerHTML = descHtml;
+
+            const container = document.getElementById("modalShots");
+            container.innerHTML = data.slots
+                .map(slot => `
+                    <div class="shot-card">
+                        <img src="${slot.img}" alt="${slot.title}" onclick="openZoom('${slot.img}', '${slot.title}')">
+                        <h4>${slot.title}</h4>
+                        <p>${slot.caption}</p>
+                    </div>
+                `)
+                .join("");
+
+            document.getElementById("previewModal").classList.add("active");
+        }
+
+        function closePreview() {
+            document.getElementById("previewModal").classList.remove("active");
+        }
+
+        function closePreviewOnBackdrop(event) {
+            if (event.target.id === "previewModal") {
+                closePreview();
+            }
+        }
+
+        function openZoom(src, alt) {
+            const zoomImg = document.getElementById("zoomImg");
+            zoomImg.src = src;
+            zoomImg.alt = alt;
+            document.getElementById("zoomOverlay").classList.add("active");
+        }
+
+        function closeZoom() {
+            document.getElementById("zoomOverlay").classList.remove("active");
+        }
+    </script>
+
         <!-- Ecosystem & Security Sync Section -->
         <section id="ecosistem" class="ecosystem-section">
             <div class="ecosystem-header">
